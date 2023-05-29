@@ -1,4 +1,4 @@
-package com.hello.learn;
+package com.hello.learn.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
