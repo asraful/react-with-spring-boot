@@ -20,6 +20,7 @@ public class ProjectController {
     @PostMapping("/api/project/create")
     public ResponseEntity<Project> create(@RequestBody Project project) {
         System.out.println(project.getDescription());
-        return new ResponseEntity<>(new Project(), HttpStatus.OK);
+        Project temp = new Project(project.getName(),project.getDescription(),"type");
+        return new ResponseEntity<>(temp, HttpStatus.OK);
     }
 }

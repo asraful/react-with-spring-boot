@@ -1,4 +1,3 @@
-import { json } from "node:stream/consumers";
 import { useState } from 'react'
 import { Listbox } from '@headlessui/react'
 
@@ -6,15 +5,19 @@ export default function CreateProejct() {
 
     const fetcher = (...args) => fetch(...args).then((res) => res.JSON());
 
-    const handleSubmit = async(event) => {
-        event.preventDeafult();
+    const handleSubmit = (event) => {
+
+        alert('Hello');
+
+        console.log('hello........');
+        event.preventDefault();
 
          const data = {
-            name:event.target.name.value,
-            description:event.target.description.value,
-            type:event.target.type.value
+            name: event.target.name.value,
+            description: event.target.description.value,
+           
          }
-
+         alert(data);
          const JSONdata = JSON.stringify(data);
 
          const endpoint = 'http://localhost:8080/api/project/create';
@@ -27,11 +30,16 @@ export default function CreateProejct() {
             body:JSONdata,
          };
 
+    
+        const response =  fetch(endpoint, options);
+ 
+    
+        //const result =  response.json();
+        alert(response);
 
-         const { responseData, error } = useSWR(endpoint, fetcher);
-
-         if (error) return <div>Project creation failed</div>;
-         if (!responseData) return <div>{responseData}</div>;
+        //  const { responseData, error } = useSWR(endpoint, fetcher);
+        //  if (error) return <div>Project creation failed</div>;
+        //  if (!responseData) return <div>{responseData}</div>;
 
     };
     

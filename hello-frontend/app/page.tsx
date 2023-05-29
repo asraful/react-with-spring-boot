@@ -7,6 +7,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import './globals.css';
 
+import CreateProject from './CreateProject'
+
 const user = {
   name: 'Asraful',
   email: 'asraful@example.com',
@@ -14,7 +16,7 @@ const user = {
     '#',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Dashboard', href: '/', current: true },
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
@@ -192,8 +194,8 @@ function Dashboard() {
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             
-
-            {/* Your content */}
+           <CreateProject/> 
+      
           
           </div>
         </main>
