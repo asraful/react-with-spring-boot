@@ -12,12 +12,12 @@ import java.util.List;
 @Controller
 public class ProjectController {
 
-    @GetMapping("/api/project/get")
+    @GetMapping("/api/projects")
     public ResponseEntity<List<Project>> get() {
         return new ResponseEntity<>(Collections.EMPTY_LIST, HttpStatus.OK);
     }
 
-    @PostMapping("/api/project/create")
+    @PostMapping("/api/projects/create")
     public ResponseEntity<Project> create(@RequestBody Project project) {
         System.out.println(project.getDescription());
         Project temp = new Project(project.getName(),project.getDescription(),"type");
