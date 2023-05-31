@@ -9,7 +9,6 @@ import Link from 'next/link';
 
 import './globals.css';
 
-import CreateProject from './CreateProject'
 
 const user = {
   name: 'Asraful',
@@ -37,9 +36,8 @@ function classNames(...classes) {
 function Dashboard() {
   return (
     <>
-      
-     <html className="h-full bg-gray-100">
-     <body className="h-full">
+    
+  
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -198,14 +196,14 @@ function Dashboard() {
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             
-           <CreateProject/> 
+         
       
           
           </div>
         </main>
       </div>
-      </body>
-      </html>
+    
+    
     </>
   )
 }
