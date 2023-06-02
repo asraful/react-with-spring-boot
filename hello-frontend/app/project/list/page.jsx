@@ -1,29 +1,17 @@
-export default function ProjectList() {
-    const fetcher = (...args) => fetch(...args).then((res) => res.JSON());
+'use client'
 
-const getProjectHandeler = (event) => {
+import ProjectList from "../ProjectList";
 
-    event.preventDefault();
-
-    const getList = (event) => {
-        const endpoint = 'http://localhost:8080/api/projects';
-    }
-
-    const options = {
-        method:'GET',
-        headers:{
-            'Content-type':'application/json',
-        }
-     };
-     const { response, error } = useSWR(endpoint, fetcher);
-
+export default function List() {
+    return(
+        <div>
+        <h1>List of projects</h1>
+            <div>
+                <ProjectList/>
+            </div>
+        </div>
+    );
 }
 
-return(
-    <div>
-    <h1>List of projects</h1>
-        <div>......</div>
-    </div>
-);
 
-}
+

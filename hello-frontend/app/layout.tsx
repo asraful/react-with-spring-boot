@@ -1,8 +1,10 @@
+import Navbar from "./Navbar"
+
 export const metadata = {
   title: 'Admin Portal',
-  description: 'Dashboard for infrastructure provisiioning',
+  description: 'Dashboard for infrastructure provisioning',
 }
-import page from "./page"
+
 
 export default function RootLayout({
   children,
@@ -11,7 +13,13 @@ export default function RootLayout({
 }) {
   return (
     
-    <html lang="en">
-      <body>{children}</body>   </html>
-  )
+    <html>
+      <body>
+      <Navbar/>
+        {children}
+      </body>
+        
+    </html>
+      )
 }
+

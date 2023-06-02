@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +15,10 @@ public class ProjectController {
 
     @GetMapping("/api/projects")
     public ResponseEntity<List<Project>> get() {
-        return new ResponseEntity<>(Collections.EMPTY_LIST, HttpStatus.OK);
+        List<Project> list = new ArrayList<>();
+        list.add(new Project("Data Analysis","Semantics of the financial data","Data"));
+        list.add(new Project("Food Data Analysis","Semantics of the food consumption","Data"));
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/api/projects/create")
